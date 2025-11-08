@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Factory Machine Control</title>
+<style>
+    body {
+        background: #9f82ef;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+    }
+    h1 {
+        color: #f9c80e;
+    }
+    #machine {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+        background: url('machine.jpg');
+        background-size: cover;
+        filter: grayscale(100%);
+    }
+    .btn {
+        padding: 15px 40px;
+        margin: 10px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        color: white;
+    }
+    .start { background: green; }
+    .stop { background: red; }
+    #statusLight {
+        width: 20px;
+        height: 20px;
+        margin: 10px auto;
+        border-radius: 50%;
+        background: red;
+    }
+</style>
+</head>
+<body>
+
+<h1>Factory Control System – Hands-Free Demo</h1>
+
+<h2>Machine A – Automated Press Machine</h2>
+
+<div id="statusLight"></div>
+<p id="statusText">Status: Stopped</p>
+
+<div id="machine"></div>
+
+<button class="btn start" onclick="startMachine()">START MACHINE</button>
+<button class="btn stop" onclick="stopMachine()">STOP MACHINE</button>
+
+<script>
+function startMachine() {
+    document.getElementById("statusText").innerText = "Status: Running";
+    document.getElementById("statusLight").style.background = "lime";
+    document.getElementById("machine").style.filter = "grayscale(0%)";
+}
+
+function stopMachine() {
+    document.getElementById("statusText").innerText = "Status: Stopped";
+    document.getElementById("statusLight").style.background = "red";
+    document.getElementById("machine").style.filter = "grayscale(100%)";
+}
+</script>
+
+</body>
+</html>
